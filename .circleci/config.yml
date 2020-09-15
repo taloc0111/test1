@@ -7,12 +7,12 @@ workflows:
   build_and_push_image:
     jobs:
       - aws-ecr/build-and-push-image:
-          account-url: 347643704404.dkr.ecr.us-west-2.amazonaws.com
-          aws-access-key-id: AKIAVB4JN6RKGJI2E4P5
-          aws-secret-access-key: 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
+          account-url: AWS_ECR_URL
+          aws-access-key-id: AWS_ACCESS_KEY_ID
+          aws-secret-access-key: AWS_SECRET_ACCESS_KEY
           create-repo: true
           dockerfile: Dockerfile
           path: .
-          region: us-west-2
+          region: AWS_REGION
           repo: helloapp
           tag: "$CIRCLE_SHA1"
